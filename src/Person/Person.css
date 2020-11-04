@@ -1,0 +1,8 @@
+.person{
+    width: 50%;
+    margin: 16px auto;
+    border: 1px solid rgb(206, 138, 138);
+    box-shadow: 1px 2px 3px rgb(161, 154, 154);
+    padding: 16px;
+    text-align: center;
+}
