@@ -44,7 +44,7 @@ class App extends Component{
 
   deletePersonHandler = (personIndex)=>{
     // const person = this.state.person.slice()
-    const persons = [...this.state.person]
+    const persons = [...this.state.persons]
     persons.splice(personIndex, 1);
     this.setState({persons: persons})
 
@@ -57,7 +57,8 @@ class App extends Component{
 
   render(){
     const style={
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color: 'white',
       font: 'inherit',
       boarder: '1px solid blue',
       padding: '9px',
@@ -78,15 +79,24 @@ class App extends Component{
           })
           }
         </div>
-      )
+      );
+      style.backgroundColor = 'red'
     }
 
+    let classes = []
+    if(this.state.persons.length <=2){
+      classes.push("red")
+    }
+    if (this.state.persons.length <=1){
+      classes.push('bold')
+    }
   return (
     <div className="App">
       <header className="App-header">
-       <h1> hey </h1>
-       <p> this main app component</p>
-       <button  style={style} onClick={this.togglePersonsHandler}
+       <h1> hey thi is header </h1>
+       <p className={classes.join(' ')}> this main app component</p>
+       <button  style={style} 
+       onClick={this.togglePersonsHandler}
        > Toggle Person</button>
 {/*       
       <div>
